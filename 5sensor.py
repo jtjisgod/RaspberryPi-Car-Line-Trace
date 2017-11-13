@@ -405,7 +405,7 @@ try:
     while True:
 
         time.sleep(1)
-        if GPIO.input(leftlessled)==0and GPIO.input(centerled)==0:
+        if GPIO.input(leftlessled)==0 and GPIO.input(centerled)==0:
             go_forward(20,20,0.01)
             if GPIO.input(leftmostled)==0:
                 go_forward(20,40,0.01)
@@ -413,9 +413,9 @@ try:
                 go_forward(50,20,0.01)
             if GPIO.input(rightlessled)==0:
                 go_forward(40,20,0.01)
-        if GPIO.input(leftlessled)==0and GPIO.input(centerled)==1:
+        if GPIO.input(leftlessled)==0 and GPIO.input(centerled)==1:
             go_forward(20,40,0.01)
-        if GPIO.input(leftlessled)==1and GPIO.input(centerled)==0:
+        if GPIO.input(leftlessled)==1 and GPIO.input(centerled)==0:
             go_forward(40,20,0.01)
 
 
