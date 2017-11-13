@@ -2,11 +2,12 @@
 """
     @ Author : JANGTAEJIN ( jtjisgod@gmail.com )
     @ Date   : 2017-11-13
-    @ Body   : 라인트레이싱에 관련된 데이터 집합 모듈
+    @ Body   : 전체적인 변수 저장
 """
 
 import Run
 import Turn
+import LineSensor
 
 # MostLeft, Left, Middle, Right, MostRight
 lineHandle = {
