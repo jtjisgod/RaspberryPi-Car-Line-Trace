@@ -9,8 +9,12 @@ import R
 
 def right() :
     print "Right Turn"
-    pass
 
 def left() :
     print "Left Turn"
-    pass
+
+def smallRight() :
+    print "smallRight"
+
+def smallLeft() :
+    print "smallLeft"

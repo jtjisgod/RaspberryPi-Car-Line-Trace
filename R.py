@@ -22,3 +22,8 @@ forward = Run.forward
 backward = Run.backward
 rightTurn = Turn.right
 leftTurn = Turn.left
+smallLeft = Turn.smallLeft
+smallRight = Turn.smallRight
+stop = Run.stop
+
+speed = 80 # Foward, Backward speed

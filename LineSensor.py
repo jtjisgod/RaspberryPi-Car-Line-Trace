@@ -11,16 +11,29 @@ sensorData = []
 
 # LineSensor
 def init() :
+
+    print("Init!")
+
     # Insert test case like under!
+
+    # Foward
     sensorData.append(LineSensorData((2,1,1,1,2), R.forward))
     sensorData.append(LineSensorData((2,1,0,1,2), R.forward))
-    sensorData.append(LineSensorData((2,0,1,1,2), R.rightTurn))
+
+    # smallRight
+    sensorData.append(LineSensorData((2,0,1,1,0), R.rightTurn))
+
+    # turnRight
     sensorData.append(LineSensorData((2,0,0,1,2), R.rightTurn))
-    sensorData.append(LineSensorData((2,1,1,0,2), R.leftTurn))
+
+    # smallLeft
+    sensorData.append(LineSensorData((0,1,1,0,2), R.leftTurn))
+
+    # turnLeft
     sensorData.append(LineSensorData((2,1,0,0,2), R.leftTurn))
 
 def chkStatus(sensor) :
-    cbFunc = lambda x : x
+    cbFunc = emptyFunc
     for data in sensorData :
         score = 0
         for i in range(0, len(data.sensor)) :
@@ -34,6 +47,9 @@ def chkStatus(sensor) :
             cbFunc = data.callback
             break
     return cbFunc
+
+def emptyFunc() :
+    pass
 
 if __name__ == '__main__':
     pass
