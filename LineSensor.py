@@ -13,29 +13,29 @@ sensorData = []
 def init() :
 
     print("Init!")
-
     # Insert test case like under!
 
     # Foward
-    sensorData.append(LineSensorData((2,0,0,0,2), R.forward))
-    sensorData.append(LineSensorData((2,0,1,0,2), R.forward))
-    sensorData.append(LineSensorData((1,0,0,1,1), R.forward))
-    sensorData.append(LineSensorData((1,1,0,0,1), R.forward))
+    sensorData.append(LineSensorData((1,0,0,0,1), R.forward))
+    sensorData.append(LineSensorData((0,0,0,0,0), R.forward))
     sensorData.append(LineSensorData((1,1,0,1,1), R.forward))
+    #if LineSensorData[0] + [LineSensorData[1] > LineSensorData[3] + LineSensorData[4]:
 
-"""
-    # smallRight
-    sensorData.append(LineSensorData((2,0,1,1,0), R.rightTurn))
+    sensorData.append(LineSensorData((1,0,0,0,0), R.smallRight))
+    sensorData.append(LineSensorData((1,1,0,0,0), R.smallRight))
+    sensorData.append(LineSensorData((1,1,1,0,0), R.smallRight))
+    sensorData.append(LineSensorData((1,1,1,1,0), R.smallRight))
+    sensorData.append(LineSensorData((1,1,0,0,1), R.smallRight))
 
-    # turnRight
-    sensorData.append(LineSensorData((2,0,0,1,2), R.rightTurn))
 
-    # smallLeft
-    sensorData.append(LineSensorData((0,1,1,0,2), R.leftTurn))
 
-    # turnLeft
-    sensorData.append(LineSensorData((2,1,0,0,2), R.leftTurn))
-"""
+
+    #elif LineSensorData[0] + [LineSensorData[1] < LineSensorData[3] + LineSensorData[4]:
+    sensorData.append(LineSensorData((1,0,0,1,1), R.smallLeft))
+    sensorData.append(LineSensorData((0,0,0,0,1), R.smallLeft))
+    sensorData.append(LineSensorData((0,0,0,1,1), R.smallLeft))
+    sensorData.append(LineSensorData((0,0,1,1,1), R.smallLeft))
+    sensorData.append(LineSensorData((0,1,1,1,1), R.smallLeft))
 
 def chkStatus(sensor) :
     cbFunc = emptyFunc

@@ -35,7 +35,7 @@ def main() :
             sensor = (GPIO.input(leftmostled), GPIO.input(leftlessled), GPIO.input(centerled), GPIO.input(rightlessled), GPIO.input(rightmostled))
             print(sensor)
             R.LineSensor.chkStatus(sensor)()
-            time.sleep(0.1)
+            time.sleep(0.5)
             R.stop()
     except KeyboardInterrupt:
         GPIO.cleanup()

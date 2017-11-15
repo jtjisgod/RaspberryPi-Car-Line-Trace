@@ -6,15 +6,21 @@
 """
 
 import R
-
+from Run import *
+speed2 = 50
 def right() :
-    print "Right Turn"
+    print ("Right Turn")
 
 def left() :
-    print "Left Turn"
+    print ("Left Turn")
 
 def smallRight() :
-    print "smallRight"
-
+    print ("smallRight")
+    go_forward_any(10)
+    LeftPwm.ChangeDutyCycle(speed2*1.3)
+    sleep()
 def smallLeft() :
-    print "smallLeft"
+    print ("smallLeft")
+    go_forward_any(10)
+    RightPwm.ChangeDutyCycle(speed2*1.3)
+    print(speed2)
