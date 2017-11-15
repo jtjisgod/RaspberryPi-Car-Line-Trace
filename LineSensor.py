@@ -17,9 +17,13 @@ def init() :
     # Insert test case like under!
 
     # Foward
-    sensorData.append(LineSensorData((2,1,1,1,2), R.forward))
-    sensorData.append(LineSensorData((2,1,0,1,2), R.forward))
+    sensorData.append(LineSensorData((2,0,0,0,2), R.forward))
+    sensorData.append(LineSensorData((2,0,1,0,2), R.forward))
+    sensorData.append(LineSensorData((1,0,0,1,1), R.forward))
+    sensorData.append(LineSensorData((1,1,0,0,1), R.forward))
+    sensorData.append(LineSensorData((1,1,0,1,1), R.forward))
 
+"""
     # smallRight
     sensorData.append(LineSensorData((2,0,1,1,0), R.rightTurn))
 
@@ -31,6 +35,7 @@ def init() :
 
     # turnLeft
     sensorData.append(LineSensorData((2,1,0,0,2), R.leftTurn))
+"""
 
 def chkStatus(sensor) :
     cbFunc = emptyFunc
