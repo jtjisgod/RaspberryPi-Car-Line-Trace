@@ -29,25 +29,15 @@ GPIO.setup(rightmostled, GPIO.IN)
 GPIO.setup(rightlessled, GPIO.IN)
 
 def main() :
-<<<<<<< HEAD
     R.Run.pwm_setup()
-=======
->>>>>>> c9a978d7deb984b763b04a64f069dcc681258d6e
     R.LineSensor.init()
     try:
         while True:
             sensor = (GPIO.input(leftmostled), GPIO.input(leftlessled), GPIO.input(centerled), GPIO.input(rightlessled), GPIO.input(rightmostled))
-<<<<<<< HEAD
             print("")
             print(sensor)
             R.LineSensor.chkStatus(sensor)()
             time.sleep(0.2)
-=======
-            print(sensor)
-            R.LineSensor.chkStatus(sensor)()
-            time.sleep(0.5)
-            R.stop()
->>>>>>> c9a978d7deb984b763b04a64f069dcc681258d6e
     except KeyboardInterrupt:
         GPIO.cleanup()
         pwm_low()
