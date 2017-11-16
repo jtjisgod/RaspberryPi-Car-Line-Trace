@@ -6,6 +6,7 @@
 """
 
 import Run
+import Huddle
 import Turn
 import LineSensor
 
@@ -25,5 +26,6 @@ left = Turn.left
 smallLeft = Turn.smallLeft
 smallRight = Turn.smallRight
 stop = Run.stop
+huddle = Huddle.huddle
 
 speed = 100 # Foward, Backward speed

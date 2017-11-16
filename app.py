@@ -36,6 +36,8 @@ def main() :
             sensor = (GPIO.input(leftmostled), GPIO.input(leftlessled), GPIO.input(centerled), GPIO.input(rightlessled), GPIO.input(rightmostled))
             print("")
             print(sensor)
+            if R.huddle() == True :
+                continue
             R.LineSensor.chkStatus(sensor)()
             time.sleep(0.1)
     except KeyboardInterrupt:

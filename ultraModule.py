@@ -1,12 +1,3 @@
-######################################################################
-### Date: 2017/10/5
-### file name: ultra.py
-### Purpose: this code has generated for the return
-###         the distance between the moving object and obstacle
-###         ultra sensor
-### this code is used for the student only
-######################################################################
-
 
 import RPi.GPIO as GPIO # import GPIO librery
 import time

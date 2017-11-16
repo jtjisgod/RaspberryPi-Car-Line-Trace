@@ -89,11 +89,9 @@ def stop():
     LeftPwm.ChangeDutyCycle(0)
     RightPwm.ChangeDutyCycle(0)
 
-
 def pwm_setup():
     LeftPwm.start(0)
     RightPwm.start(0)
-
 
 def pwm_low():
     GPIO.output(MotorLeft_PWM, GPIO.LOW)
