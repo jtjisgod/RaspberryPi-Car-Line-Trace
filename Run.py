@@ -24,12 +24,12 @@ MotorRight_PWM = 37
 #LeftMotor의 val 인자를 이용해서 Left모터를 조절한다
 #val값이 1이면 LeftMotor 전진 0이면 후진한다
 def LeftMotor(val):
-    if val ==1:
+    if val == 0:
         GPIO.output(MotorLeft_A, GPIO.HIGH)
         GPIO.output(MotorLeft_B, GPIO.LOW)
         GPIO.output(MotorLeft_PWM,GPIO.HIGH)
         GPIO.output(MotorRight_PWM,GPIO.HIGH)
-    elif val ==0:
+    elif val == 1:
         GPIO.output(MotorLeft_A, GPIO.LOW)
         GPIO.output(MotorLeft_B, GPIO.HIGH)
         GPIO.output(MotorLeft_PWM,GPIO.HIGH)
@@ -40,12 +40,12 @@ def LeftMotor(val):
 #RightMotor의 val 인자를 이용해서 Right모터를 조절한다
 #val값이 1이면 RightMotor 전진 0이면 후진한다
 def RightMotor(val):
-    if val ==1:
+    if val == 0:
         GPIO.output(MotorRight_A, GPIO.LOW)
         GPIO.output(MotorRight_B, GPIO.HIGH)
         GPIO.output(MotorLeft_PWM,GPIO.HIGH)
         GPIO.output(MotorRight_PWM,GPIO.HIGH)
-    elif val==0:
+    elif val== 1:
         GPIO.output(MotorRight_A, GPIO.HIGH)
         GPIO.output(MotorRight_B, GPIO.LOW)
         GPIO.output(MotorLeft_PWM,GPIO.HIGH)

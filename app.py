@@ -37,7 +37,7 @@ def main() :
             print("")
             print(sensor)
             R.LineSensor.chkStatus(sensor)()
-            time.sleep(0.2)
+            time.sleep(0.1)
     except KeyboardInterrupt:
         GPIO.cleanup()
         pwm_low()

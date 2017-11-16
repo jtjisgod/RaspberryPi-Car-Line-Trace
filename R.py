@@ -26,4 +26,4 @@ smallLeft = Turn.smallLeft
 smallRight = Turn.smallRight
 stop = Run.stop
 
-speed = 90 # Foward, Backward speed
+speed = 100 # Foward, Backward speed
