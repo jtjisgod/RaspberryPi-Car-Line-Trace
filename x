@@ -129,7 +129,7 @@ RightPwm = GPIO.PWM(MotorRight_PWM, 100)
 # =======================================================================
 # define the forward module
 # forward has the parameters of speed and running_time
-def go_forward(speedleft,speedright, running_time):
+def go_forward(speed, running_time):
     # set the left motor to go forward
     leftmotor(forward0)
     leftmotor(forward1)
@@ -144,9 +144,9 @@ def go_forward(speedleft,speedright, running_time):
     # GPIO.output(MotorRight_B,GPIO.HIGH)
     GPIO.output(MotorRight_PWM, GPIO.HIGH)
     # set the speed of the left motor to go forward
-    LeftPwm.ChangeDutyCycle(speedleft)
+    LeftPwm.ChangeDutyCycle(speed)
     # set the speed of the right motor to go forward
-    RightPwm.ChangeDutyCycle(speedright)
+    RightPwm.ChangeDutyCycle(speed)
     # set the running time of the left motor to go forward
     sleep(running_time)
 
@@ -403,21 +403,14 @@ GPIO.setup(rightmostled, GPIO.IN)
 
 try:
     while True:
-
+        print("leftmostled  detects black line(0) or white ground(1): " + str(GPIO.input(leftmostled)))
+        print("leftlessled  detects black line(0) or white ground(1): " + str(GPIO.input(leftlessled)))
+        print("centerled    detects black line(0) or white ground(1): " + str(GPIO.input(centerled)))
+        print("rightlessled detects black line(0) or white ground(1): " + str(GPIO.input(rightlessled)))
+        print("rightmostled detects black line(0) or white ground(1): " + str(GPIO.input(rightmostled)))
         time.sleep(1)
-        if GPIO.input(leftlessled)==0 and GPIO.input(centerled)==0:
-            go_forward(20,20,0.01)
-            if GPIO.input(leftmostled)==0:
-                go_forward(20,40,0.01)
-            if GPIO.input(rightmostled)==0:
-                go_forward(50,20,0.01)
-            if GPIO.input(rightlessled)==0:
-                go_forward(40,20,0.01)
-        if GPIO.input(leftlessled)==0 and GPIO.input(centerled)==1:
-            go_forward(20,40,0.01)
-        if GPIO.input(leftlessled)==1 and GPIO.input(centerled)==0:
-            go_forward(40,20,0.01)
-
+        if GPIO.input(leftmostled)==0:
+            go_forward(30,1)
 
 
 

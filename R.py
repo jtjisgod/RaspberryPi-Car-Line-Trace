@@ -20,5 +20,11 @@ lineHandle = {
 
 forward = Run.forward
 backward = Run.backward
-rightTurn = Turn.right
-leftTurn = Turn.left
+right = Turn.right
+left = Turn.left
+smallLeft = Turn.smallLeft
+smallRight = Turn.smallRight
+stop = Run.stop
+
+
+speed = 60 # Foward, Backward speed
