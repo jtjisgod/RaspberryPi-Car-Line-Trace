@@ -41,8 +41,8 @@ def init() :
         sensorData.append(LineSensorData(lc[-1::-1], R.right))
 
     for slc in smallLeftCase :
-        sensorData.append(LineSensorData(lc, R.smallLeft))
-        sensorData.append(LineSensorData(lc[-1::-1], R.smallRight))
+        sensorData.append(LineSensorData(slc, R.smallLeft))
+        sensorData.append(LineSensorData(slc[-1::-1], R.smallRight))
 
 
     #elif LineSensorData[0] + [LineSensorData[1] < LineSensorData[3] + LineSensorData[4]:
