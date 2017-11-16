@@ -20,11 +20,20 @@ lineHandle = {
 
 forward = Run.forward
 backward = Run.backward
+<<<<<<< HEAD
 right = Turn.right
 left = Turn.left
+=======
+rightTurn = Turn.right
+leftTurn = Turn.left
+>>>>>>> c9a978d7deb984b763b04a64f069dcc681258d6e
 smallLeft = Turn.smallLeft
 smallRight = Turn.smallRight
 stop = Run.stop
 
+<<<<<<< HEAD
 
 speed = 90 # Foward, Backward speed
+=======
+speed = 10 # Foward, Backward speed
+>>>>>>> c9a978d7deb984b763b04a64f069dcc681258d6e

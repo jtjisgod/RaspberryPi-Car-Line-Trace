@@ -17,6 +17,7 @@ def init() :
     # Insert test case like under!
 
     # Foward
+<<<<<<< HEAD
     sensorData.append(LineSensorData((1,0,2,0,1), R.forward))
     sensorData.append(LineSensorData((0,0,2,0,0), R.forward))
     sensorData.append(LineSensorData((1,1,2,1,1), R.forward))
@@ -53,6 +54,31 @@ def chkStatus(sensor) :
         sensor = lastSensor;
     lastSensor = sensor
     cbFunc = R.forward
+=======
+    sensorData.append(LineSensorData((1,0,0,0,1), R.forward))
+    sensorData.append(LineSensorData((0,0,0,0,0), R.forward))
+    sensorData.append(LineSensorData((1,1,0,1,1), R.forward))
+    #if LineSensorData[0] + [LineSensorData[1] > LineSensorData[3] + LineSensorData[4]:
+
+    sensorData.append(LineSensorData((1,0,0,0,0), R.smallRight))
+    sensorData.append(LineSensorData((1,1,0,0,0), R.smallRight))
+    sensorData.append(LineSensorData((1,1,1,0,0), R.smallRight))
+    sensorData.append(LineSensorData((1,1,1,1,0), R.smallRight))
+    sensorData.append(LineSensorData((1,1,0,0,1), R.smallRight))
+
+
+
+
+    #elif LineSensorData[0] + [LineSensorData[1] < LineSensorData[3] + LineSensorData[4]:
+    sensorData.append(LineSensorData((1,0,0,1,1), R.smallLeft))
+    sensorData.append(LineSensorData((0,0,0,0,1), R.smallLeft))
+    sensorData.append(LineSensorData((0,0,0,1,1), R.smallLeft))
+    sensorData.append(LineSensorData((0,0,1,1,1), R.smallLeft))
+    sensorData.append(LineSensorData((0,1,1,1,1), R.smallLeft))
+
+def chkStatus(sensor) :
+    cbFunc = emptyFunc
+>>>>>>> c9a978d7deb984b763b04a64f069dcc681258d6e
     for data in sensorData :
         score = 0
         for i in range(0, len(data.sensor)) :
@@ -68,8 +94,12 @@ def chkStatus(sensor) :
     return cbFunc
 
 def emptyFunc() :
+<<<<<<< HEAD
     print "EMpty"
     return R.forward
+=======
+    pass
+>>>>>>> c9a978d7deb984b763b04a64f069dcc681258d6e
 
 if __name__ == '__main__':
     pass

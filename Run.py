@@ -83,10 +83,29 @@ def backward() :
     print ("Backward")
     go_backward_any(R.speed)
 
+<<<<<<< HEAD
 def stop():
     GPIO.output(MotorLeft_PWM, GPIO.LOW)
     GPIO.output(MotorRight_PWM, GPIO.LOW)
     LeftPwm.ChangeDutyCycle(0)
+=======
+def go_forward(speed, running_time):
+    LeftMotor(1)
+    RightMotor(1)
+    LeftPwm.ChangeDutyCycle(speed)
+    RightPwm.ChangeDutyCycle(speed)
+    sleep(running_time)
+
+
+def stop():
+    # the speed of left motor will be set as LOW
+    GPIO.output(MotorLeft_PWM, GPIO.LOW)
+    # the speed of right motor will be set as LOW
+    GPIO.output(MotorRight_PWM, GPIO.LOW)
+    # left motor will be stopped with function of ChangeDutyCycle(0)
+    LeftPwm.ChangeDutyCycle(0)
+    # left motor will be stopped with function of ChangeDutyCycle(0)
+>>>>>>> c9a978d7deb984b763b04a64f069dcc681258d6e
     RightPwm.ChangeDutyCycle(0)
 
 

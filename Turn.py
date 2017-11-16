@@ -7,6 +7,7 @@
 
 import R
 from Run import *
+<<<<<<< HEAD
 
 def right() :
     print ("Right Turn")
@@ -35,3 +36,22 @@ def smallLeft() :
     RightMotor(1)
     LeftPwm.ChangeDutyCycle(R.speed*0.8)
     RightPwm.ChangeDutyCycle(R.speed)
+=======
+speed2 = 50
+def right() :
+    print ("Right Turn")
+
+def left() :
+    print ("Left Turn")
+
+def smallRight() :
+    print ("smallRight")
+    go_forward_any(10)
+    LeftPwm.ChangeDutyCycle(speed2*1.3)
+    sleep()
+def smallLeft() :
+    print ("smallLeft")
+    go_forward_any(10)
+    RightPwm.ChangeDutyCycle(speed2*1.3)
+    print(speed2)
+>>>>>>> c9a978d7deb984b763b04a64f069dcc681258d6e
