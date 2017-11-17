@@ -9,6 +9,7 @@ import Run
 import Huddle
 import Turn
 import LineSensor
+import FiveSensor
 
 # MostLeft, Left, Middle, Right, MostRight
 lineHandle = {

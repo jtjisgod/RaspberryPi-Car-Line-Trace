@@ -10,6 +10,27 @@ from LineSensorData import LineSensorData
 sensorData = []
 lastSensor = (2,2,2,2,2)
 
+forwardCase = (
+    (1,0,2,0,1),
+    (0,0,2,0,0),
+    (1,1,2,1,1),
+    (0,1,2,1,0),
+    (1,1,2,1,1)
+)
+
+leftCase = (
+    (0,1,1,1,1),
+    (1,0,1,1,1),
+    # (1,0,0,1,1),
+    # (0,0,1,1,1),
+);
+
+smallLeftCase = (
+    # (0,0,1,1,1),
+    # (1,0,1,1,1),
+    # (1,0,0,1,1),
+);
+
 # LineSensor
 def init() :
 
@@ -17,24 +38,8 @@ def init() :
     # Insert test case like under!
 
     # Foward
-    sensorData.append(LineSensorData((1,0,2,0,1), R.forward))
-    sensorData.append(LineSensorData((0,0,2,0,0), R.forward))
-    sensorData.append(LineSensorData((1,1,2,1,1), R.forward))
-    sensorData.append(LineSensorData((0,1,2,1,0), R.forward))
-    sensorData.append(LineSensorData((1,1,2,1,1), R.forward))
-    #if LineSensorData[0] + [LineSensorData[1] > LineSensorData[3] + LineSensorData[4]:
-
-    # R.smallRight, R.smallLeft = R.smallLeft, R.smallRight
-    # R.right, R.left = R.left, R.right
-
-    leftCase = (
-     (0,1,1,1,1),
-     (0,0,1,1,1),
-    );
-
-    smallLeftCase = (
-     (1,0,1,1,1),
-    );
+    for fc in forwardCase :
+        sensorData.append(LineSensorData(fc, R.forward))
 
     for lc in leftCase :
         sensorData.append(LineSensorData(lc, R.left))
@@ -49,8 +54,12 @@ def init() :
 
 def chkStatus(sensor) :
     global lastSensor
+
     if sensor == (1,1,1,1,1) :
+        return R.forward
+        print "Called Last Sensor"
         sensor = lastSensor;
+
     lastSensor = sensor
     cbFunc = R.forward
 
@@ -67,6 +76,23 @@ def chkStatus(sensor) :
             cbFunc = data.callback
             break
     return cbFunc
+
+def cmpStatus(sensor, sensorData) :
+    cbFunc = R.forward
+    for data in sensorData :
+        score = 0
+        for i in range(0, len(data)) :
+            if data[i] == 2:
+                score += 1
+                continue
+            if sensor[i] == data[i] :
+                score += 1
+                continue
+        if score == 5 :
+            return True
+            break
+    return False
+
 
 def emptyFunc() :
     print "EMpty"

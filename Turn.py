@@ -6,32 +6,33 @@
 """
 
 import R
+import time
 from Run import *
 
 def right() :
     print ("Right Turn")
     LeftMotor(1)
     RightMotor(0)
-    LeftPwm.ChangeDutyCycle(R.speed)
-    RightPwm.ChangeDutyCycle(R.speed)
+    LeftPwm.ChangeDutyCycle(R.speed*0.8)
+    RightPwm.ChangeDutyCycle(R.speed*0.8)
 
 def left() :
     print ("Left Turn")
     LeftMotor(0)
     RightMotor(1)
-    LeftPwm.ChangeDutyCycle(R.speed)
-    RightPwm.ChangeDutyCycle(R.speed)
+    LeftPwm.ChangeDutyCycle(R.speed*0.8)
+    RightPwm.ChangeDutyCycle(R.speed*0.8)
 
 def smallRight() :
     print ("smallRight")
     LeftMotor(1)
-    RightMotor(1)
-    LeftPwm.ChangeDutyCycle(R.speed)
+    RightMotor(0)
+    LeftPwm.ChangeDutyCycle(R.speed*0.5)
     RightPwm.ChangeDutyCycle(R.speed*0.5)
 
 def smallLeft() :
     print ("smallLeft")
-    LeftMotor(1)
+    LeftMotor(0)
     RightMotor(1)
     LeftPwm.ChangeDutyCycle(R.speed*0.5)
-    RightPwm.ChangeDutyCycle(R.speed)
+    RightPwm.ChangeDutyCycle(R.speed*0.5)

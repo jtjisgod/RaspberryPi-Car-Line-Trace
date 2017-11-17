@@ -21,7 +21,7 @@ GPIO.setup(echo,GPIO.IN)
 
 def getDistance():
     GPIO.output(trig,False)
-    time.sleep(0.5)
+    time.sleep(0.00001)
     GPIO.output(trig,True)
     time.sleep(0.00001)
     GPIO.output(trig,False)
@@ -43,15 +43,59 @@ def huddle() :
         time.sleep(1)
 
         print "================huddle============"
-        R.right()   ;time.sleep(0.4)
-        R.forward() ;time.sleep(0.3)
-        R.left()    ;time.sleep(0.4)
-        R.forward() ;time.sleep(0.8)
-        R.left()    ;time.sleep(0.5)
-        R.forward() ;time.sleep(0.6)
-        R.right()    ;time.sleep(0.2)
-        R.forward() ;time.sleep(0.1)
+
+        turnCount = 0
+        while True :
+            R.stop()
+            if getDistance() > 30 :
+                break
+            R.right()
+            time.sleep(0.25)
+            turnCount += 1
+
+        R.forward()
+        time.sleep(0.7)
+
+        for i in range(0, turnCount) :
+            R.stop()
+            getDistance()
+            R.left()
+            time.sleep(0.25)
+
+        R.forward()
         time.sleep(1)
+
+        while True :
+            print "FiveSensor",
+            sensor = R.FiveSensor.get()
+            print sensor
+            if sensor == (1,1,1,1,1) :
+                R.left()
+                time.sleep(0.1)
+                R.forward()
+                time.sleep(0.1)
+            else :
+                break
+
+        while True :
+            print "FiveSensor",
+            sensor = R.FiveSensor.get()
+            print sensor
+            if R.LineSensor.cmpStatus(sensor, R.LineSensor.forwardCase) :
+                R.right()
+                time.sleep(0.1)
+                R.forward()
+                time.sleep(0.1)
+            else :
+                break
+
+        R.right()
+        time.sleep(0.2)
+        R.forward()
+        time.sleep(0.2)
+
+        R.stop()
+
         print "================huddle============"
         return True
     return False

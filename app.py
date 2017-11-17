@@ -6,52 +6,29 @@
 """
 
 import R
-
-import RPi.GPIO as GPIO
+import FiveSensor
 import time
 import sys
-
-
-GPIO.setwarnings(False)
-
-GPIO.setmode(GPIO.BOARD)
-
-leftmostled=16
-leftlessled=18
-centerled=22
-rightlessled=40
-rightmostled=32
-
-GPIO.setup(leftmostled, GPIO.IN)
-GPIO.setup(leftlessled, GPIO.IN)
-GPIO.setup(centerled,   GPIO.IN)
-GPIO.setup(rightmostled, GPIO.IN)
-GPIO.setup(rightlessled, GPIO.IN)
+import RPi.GPIO as GPIO
 
 def main() :
     R.Run.pwm_setup()
     R.LineSensor.init()
+    chk = 0
     try:
         while True:
-            sensor = (GPIO.input(leftmostled), GPIO.input(leftlessled), GPIO.input(centerled), GPIO.input(rightlessled), GPIO.input(rightmostled))
+            sensor = FiveSensor.get()
             print("")
             print(sensor)
             if R.huddle() == True :
                 continue
             R.LineSensor.chkStatus(sensor)()
-            time.sleep(0.1)
+            time.sleep(0.06)
+            # R.stop()
+            chk += 1
     except KeyboardInterrupt:
         GPIO.cleanup()
-        pwm_low()
 
-def trackingModule() :
-    reli = []
-    reli.append(GPIO.input(leftmostled))
-    reli.append(GPIO.input(leftlessled))
-    reli.append(GPIO.input(centerled))
-    reli.append(GPIO.input(rightlessled))
-    reli.append(GPIO.input(rightmostled))
-    return reli
 
 if __name__ == '__main__':
     main()
