@@ -35,9 +35,10 @@ def getDistance():
     return distance
 
 def huddle() :
+    chkDis = 20
     distance = getDistance()
     print "Distance : " + str(distance)
-    if distance < 30 :
+    if distance < chkDis :
         print "Stopped"
         R.stop()
         time.sleep(1)
@@ -47,23 +48,27 @@ def huddle() :
         turnCount = 0
         while True :
             R.stop()
-            if getDistance() > 30 :
+            if getDistance() > chkDis :
                 break
             R.right()
-            time.sleep(0.25)
+            time.sleep(0.1)
             turnCount += 1
 
+
+        # 베터리 없을 떄 : 0.1
+        # 베터리 만땅 : 0.4
         R.forward()
-        time.sleep(0.7)
+        time.sleep(0.4)
+
 
         for i in range(0, turnCount) :
             R.stop()
             getDistance()
             R.left()
-            time.sleep(0.25)
+            time.sleep(0.1)
 
         R.forward()
-        time.sleep(1)
+        time.sleep(0.2)
 
         while True :
             print "FiveSensor",

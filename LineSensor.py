@@ -13,9 +13,8 @@ lastSensor = (2,2,2,2,2)
 forwardCase = (
     (1,0,2,0,1),
     (0,0,2,0,0),
-    (1,1,2,1,1),
     (0,1,2,1,0),
-    (1,1,2,1,1)
+    (1,1,0,1,1)
 )
 
 leftCase = (
@@ -56,7 +55,7 @@ def chkStatus(sensor) :
     global lastSensor
 
     if sensor == (1,1,1,1,1) :
-        return R.forward
+        # return R.forward
         print "Called Last Sensor"
         sensor = lastSensor;
 

@@ -13,15 +13,23 @@ def right() :
     print ("Right Turn")
     LeftMotor(1)
     RightMotor(0)
-    LeftPwm.ChangeDutyCycle(R.speed*0.8)
-    RightPwm.ChangeDutyCycle(R.speed*0.8)
+    LeftPwm.ChangeDutyCycle(R.speed*0.65)
+    RightPwm.ChangeDutyCycle(R.speed*0.65)
+    """
+    LeftPwm.ChangeDutyCycle(R.speed*0.5)
+    RightPwm.ChangeDutyCycle(R.speed*0.5)
+    #"""
 
 def left() :
     print ("Left Turn")
     LeftMotor(0)
     RightMotor(1)
-    LeftPwm.ChangeDutyCycle(R.speed*0.8)
-    RightPwm.ChangeDutyCycle(R.speed*0.8)
+    LeftPwm.ChangeDutyCycle(R.speed*0.5)
+    RightPwm.ChangeDutyCycle(R.speed*0.5)
+    """
+    LeftPwm.ChangeDutyCycle(R.speed*0.7)
+    RightPwm.ChangeDutyCycle(R.speed*0.7)
+    #"""
 
 def smallRight() :
     print ("smallRight")
