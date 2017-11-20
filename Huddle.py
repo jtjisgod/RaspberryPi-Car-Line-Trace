@@ -5,7 +5,6 @@
     @ Body   : 라인트레이싱에 대한 전진/후진 모듈
 """
 
-
 import RPi.GPIO as GPIO # import GPIO librery
 import time
 import R
@@ -19,6 +18,7 @@ echo=31
 GPIO.setup(trig,GPIO.OUT)
 GPIO.setup(echo,GPIO.IN)
 
+# 거리값을 반환함
 def getDistance():
     GPIO.output(trig,False)
     time.sleep(0.00001)
@@ -34,6 +34,8 @@ def getDistance():
     distance=round(distance,2)
     return distance
 
+# 장애물이 있는경우 없을 때까지 회전한 뒤 전진, 회전, 전진을 반복하여 장애물을 피하고 라인으로 돌아가는 역할을 함.
+# 장애물을 발견한 경우에는 위의 말대로 알고리즘을 따르고, 없다고 판단한 경우에는 알고리즘을 따르지 않고 false 를 발견함.
 def huddle() :
     chkDis = 20
     distance = getDistance()

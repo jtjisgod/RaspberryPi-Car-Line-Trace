@@ -11,6 +11,10 @@ import time
 import sys
 import RPi.GPIO as GPIO
 
+"""
+    Main 함수
+    전체적인 실행을 담당하고 있음
+"""
 def main() :
     R.Run.pwm_setup()
     R.LineSensor.init()

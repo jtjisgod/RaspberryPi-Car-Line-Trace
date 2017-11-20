@@ -10,6 +10,7 @@ from LineSensorData import LineSensorData
 sensorData = []
 lastSensor = (2,2,2,2,2)
 
+# 전진할 값
 forwardCase = (
     (1,0,2,0,1),
     (0,0,2,0,0),
@@ -17,6 +18,7 @@ forwardCase = (
     (1,1,0,1,1)
 )
 
+# 좌회전 값
 leftCase = (
     (0,1,1,1,1),
     (1,0,1,1,1),
@@ -24,13 +26,15 @@ leftCase = (
     # (0,0,1,1,1),
 );
 
+# 왼쪽 미세조종 값
 smallLeftCase = (
     # (0,0,1,1,1),
     # (1,0,1,1,1),
     # (1,0,0,1,1),
 );
 
-# LineSensor
+# LineSensor 초기화
+# 기본적인 값을 초기화하여 case에 대한 callback 함수를 함께 LineSensorData 에 담아 sensordata 에 추가함
 def init() :
 
     print("Init!")
@@ -51,6 +55,7 @@ def init() :
 
     #elif LineSensorData[0] + [LineSensorData[1] < LineSensorData[3] + LineSensorData[4]:
 
+# 센서값을 받아 검색 한 뒤 올바른 callback 함수를 반환해줌
 def chkStatus(sensor) :
     global lastSensor
 
@@ -76,6 +81,7 @@ def chkStatus(sensor) :
             break
     return cbFunc
 
+# 센서값이 센서값의 모음들에 들어가는지 체크하여 반환
 def cmpStatus(sensor, sensorData) :
     cbFunc = R.forward
     for data in sensorData :
@@ -93,6 +99,7 @@ def cmpStatus(sensor, sensorData) :
     return False
 
 
+# 빈 함수, 전진 함수를 반환함
 def emptyFunc() :
     print "EMpty"
     return R.forward

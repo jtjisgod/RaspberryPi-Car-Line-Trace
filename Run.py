@@ -67,28 +67,31 @@ GPIO.setup(MotorRight_PWM, GPIO.OUT)
 LeftPwm = GPIO.PWM(MotorLeft_PWM, 10)
 RightPwm = GPIO.PWM(MotorRight_PWM, 10)
 
-
-
+# 스피드에 따라 전진한다
 def go_forward_any(speed):
     LeftMotor(1)
     RightMotor(1)
     LeftPwm.ChangeDutyCycle(speed)
     RightPwm.ChangeDutyCycle(speed)
 
+# 출력하고 전진한다
 def forward() :
     print ("Forward")
     go_forward_any(R.speed)
 
+# 출력하고 후진한다
 def backward() :
     print ("Backward")
     go_backward_any(R.speed)
 
+# 멈춘다
 def stop():
     GPIO.output(MotorLeft_PWM, GPIO.LOW)
     GPIO.output(MotorRight_PWM, GPIO.LOW)
     LeftPwm.ChangeDutyCycle(0)
     RightPwm.ChangeDutyCycle(0)
 
+# 초기화
 def pwm_setup():
     LeftPwm.start(0)
     RightPwm.start(0)
