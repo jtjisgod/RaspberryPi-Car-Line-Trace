@@ -7,7 +7,7 @@
 
 """
 편의를 위해 R.py 만 import 하면 많은 Method 를 쓸 수 있게 구축하였습니다.
-RPi.GPIO를 가져오면서 GPIO로 새 이름 지정합니다.
+
 """
 import R
 import time
@@ -21,7 +21,7 @@ def right() :
     RightMotor(0)
     LeftPwm.ChangeDutyCycle(R.speed*0.65)
     RightPwm.ChangeDutyCycle(R.speed*0.65)
-    """
+    """상황에 따라 사용
     LeftPwm.ChangeDutyCycle(R.speed*0.5)
     RightPwm.ChangeDutyCycle(R.speed*0.5)
     #"""
@@ -33,7 +33,7 @@ def left() :
     RightMotor(1)
     LeftPwm.ChangeDutyCycle(R.speed*0.5)
     RightPwm.ChangeDutyCycle(R.speed*0.5)
-    """
+    """상황에 따라 사용
     LeftPwm.ChangeDutyCycle(R.speed*0.7)
     RightPwm.ChangeDutyCycle(R.speed*0.7)
     """
