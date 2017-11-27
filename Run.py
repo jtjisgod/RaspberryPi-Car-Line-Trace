@@ -90,18 +90,18 @@ def go_forward_any(speed):
 
 
 def forward() :
-    # 출력하고 전진한다
+    """출력하고 전진한다"""
     print ("Forward")
     go_forward_any(R.speed)
 
 def backward() :
-    # 출력하고 후진한다
+    """출력하고 후진한다"""
     print ("Backward")
     go_backward_any(R.speed)
 
 
 def stop():
-    # 멈춘다
+    """멈춘다"""
     GPIO.output(MotorLeft_PWM, GPIO.LOW)
     GPIO.output(MotorRight_PWM, GPIO.LOW)
     LeftPwm.ChangeDutyCycle(0)
@@ -109,7 +109,7 @@ def stop():
 
 
 def pwm_setup():
-    # 초기화
+    """초기화"""
     LeftPwm.start(0)
     RightPwm.start(0)
 
