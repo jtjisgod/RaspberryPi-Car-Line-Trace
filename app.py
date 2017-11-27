@@ -11,11 +11,12 @@ import time
 import sys
 import RPi.GPIO as GPIO
 
-"""
+
+def main() :
+    """
     Main 함수
     전체적인 실행을 담당하고 있음
-"""
-def main() :
+    """
     R.Run.pwm_setup()
     R.LineSensor.init()
     chk = 0
@@ -27,9 +28,9 @@ def main() :
             if R.huddle() == True :
                 continue
             R.LineSensor.chkStatus(sensor)()
-            # 베터리 만땅 = 0.06
             time.sleep(0.05)
-            # 베터리 없음 = 0.03
+            """베터리 만땅 = 0.06"""
+            """베터리 없음 = 0.03"""
             # time.sleep(0.03)
             # R.stop()
             chk += 1
