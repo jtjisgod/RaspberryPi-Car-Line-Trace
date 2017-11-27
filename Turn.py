@@ -38,16 +38,16 @@ def left() :
     RightPwm.ChangeDutyCycle(R.speed*0.7)
     """
 
-# 작은 미세조정을 한다
 def smallRight() :
+    """작은 미세조정을 한다"""
     print ("smallRight")
     LeftMotor(1)
     RightMotor(0)
     LeftPwm.ChangeDutyCycle(R.speed*0.5)
     RightPwm.ChangeDutyCycle(R.speed*0.5)
 
-# 작은 미세조정을 한다.
 def smallLeft() :
+    """작은 미세조정을 한다"""
     print ("smallLeft")
     LeftMotor(0)
     RightMotor(1)
