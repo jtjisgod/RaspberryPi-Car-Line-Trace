@@ -18,8 +18,8 @@ echo=31
 GPIO.setup(trig,GPIO.OUT)
 GPIO.setup(echo,GPIO.IN)
 
-# 거리값을 반환함
 def getDistance():
+    """거리값을 반환함"""
     GPIO.output(trig,False)
     time.sleep(0.00001)
     GPIO.output(trig,True)
@@ -34,9 +34,11 @@ def getDistance():
     distance=round(distance,2)
     return distance
 
-# 장애물이 있는경우 없을 때까지 회전한 뒤 전진, 회전, 전진을 반복하여 장애물을 피하고 라인으로 돌아가는 역할을 함.
-# 장애물을 발견한 경우에는 위의 말대로 알고리즘을 따르고, 없다고 판단한 경우에는 알고리즘을 따르지 않고 false 를 발견함.
 def huddle() :
+    """
+    장애물이 있는경우 없을 때까지 회전한 뒤 전진, 회전, 전진을 반복하여 장애물을 피하고 라인으로 돌아가는 역할을 함.
+    장애물을 발견한 경우에는 위의 말대로 알고리즘을 따르고, 없다고 판단한 경우에는 알고리즘을 따르지 않고 false 를 발견함.
+    """
     chkDis = 20
     distance = getDistance()
     print "Distance : " + str(distance)
@@ -57,8 +59,10 @@ def huddle() :
             turnCount += 1
 
 
-        # 베터리 없을 떄 : 0.1
-        # 베터리 만땅 : 0.4
+        """
+         베터리 없을 떄 : 0.1
+         베터리 만땅 : 0.4
+        """
         R.forward()
         time.sleep(0.4)
 
