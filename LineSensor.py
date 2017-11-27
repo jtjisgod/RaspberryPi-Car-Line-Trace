@@ -33,9 +33,12 @@ smallLeftCase = (
     # (1,0,0,1,1),
 );
 
-# LineSensor 초기화
-# 기본적인 값을 초기화하여 case에 대한 callback 함수를 함께 LineSensorData 에 담아 sensordata 에 추가함
+
 def init() :
+    """
+    ineSensor 초기화
+    기본적인 값을 초기화하여 case에 대한 callback 함수를 함께 LineSensorData 에 담아 sensordata 에 추가함
+    """
 
     print("Init!")
     # Insert test case like under!
@@ -55,8 +58,8 @@ def init() :
 
     #elif LineSensorData[0] + [LineSensorData[1] < LineSensorData[3] + LineSensorData[4]:
 
-# 센서값을 받아 검색 한 뒤 올바른 callback 함수를 반환해줌
 def chkStatus(sensor) :
+    """센서값을 받아 검색 한 뒤 올바른 callback 함수를 반환해줌"""
     global lastSensor
 
     if sensor == (1,1,1,1,1) :
@@ -81,8 +84,8 @@ def chkStatus(sensor) :
             break
     return cbFunc
 
-# 센서값이 센서값의 모음들에 들어가는지 체크하여 반환
 def cmpStatus(sensor, sensorData) :
+    """센서값이 센서값의 모음들에 들어가는지 체크하여 반환"""
     cbFunc = R.forward
     for data in sensorData :
         score = 0
@@ -99,8 +102,9 @@ def cmpStatus(sensor, sensorData) :
     return False
 
 
-# 빈 함수, 전진 함수를 반환함
+
 def emptyFunc() :
+    """빈 함수, 전진 함수를 반환함"""
     print "EMpty"
     return R.forward
 
